@@ -2,7 +2,10 @@
     <div class="container">
         @forelse ($posts as $post)
             <div>
-                <h2>{{$post->title}}</h2>
+                <h2><a href="{{route('posts.show',$post)}}">{{$post->title}}</a></h2>
+                <div>
+                    <p>{{$post->content}}</p>
+                </div>
             </div>
         @empty
             <h2>No posts!!</h2>
